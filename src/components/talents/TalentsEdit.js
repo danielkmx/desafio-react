@@ -33,9 +33,6 @@ import { connect } from "react-redux";
 const TalentsEditReduxForm = reduxForm({
     form: "talentsEdit"
   })(TalentsEdit);
-  const mapStateToProps = state => {
-    return { selectedTalent: state.selectedTalent };
-  };
   const renderInput = ({ input , label }) => (
     <div className="field">
     <label>{label}</label>

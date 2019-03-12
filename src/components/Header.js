@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import GoogleAuth from './GoogleAuth';
 
 const Header = (props) => {
-  console.log(props)
   if(props.signIn){
 
   return (

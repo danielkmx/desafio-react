@@ -33,7 +33,7 @@ class App extends React.Component{
         <div>
       <Header signIn={this.props.signedIn} />
           
-      <div class="ui message">
+      <div className="ui message">
   <p>You must login first.</p>
 </div>
         </div>

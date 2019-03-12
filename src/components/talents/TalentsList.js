@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchTalents,selectTalent ,deleteTalent} from "../../actions";
 import { Link } from "react-router-dom";
+import './TalentsList.css';
 
  class TalentsList extends React.Component {
   componentDidMount() {
@@ -28,8 +29,11 @@ import { Link } from "react-router-dom";
                 <td data-label="BestTimeToWork">{talent.BestTimeToWork}</td>
                 <td data-label="SalaryRequirementPerHour">{talent.SalaryRequirementPerHour}</td>
                 <td data-label="RegisterDate">{talent.RegisterDate}</td>
-                <td onClick={() => this.props.selectTalent(talent)} ><Link  to={`/talents/edit`}>Edit</Link></td>
-                <td onClick={async () => {await this.props.deleteTalent(talent._id); this.props.fetchTalents()}}><i  className="trash alternate outline icon"></i></td>
+                <td>
+                  <Link onClick={() => this.props.selectTalent(talent)}  to={`/talents/edit`}>Edit</Link>
+                  <i onClick={async () => {await this.props.deleteTalent(talent._id); this.props.fetchTalents()}} className="trash-icon trash alternate outline icon"></i>
+                  </td>
+                
               </tr>
             </tbody>
         );

@@ -45,7 +45,7 @@ export const deleteTalent = talentId => async dispatch => {
 };
 export const editTalent = (values) => async dispatch => {
     const props = [];
-     Object.keys(values).map( value => {
+     Object.keys(values).forEach( value => {
       props.push({"propName": value, "value": values[value]});  
     });
     const result = await talentsApi.patch("/talents/" + values._id, 
